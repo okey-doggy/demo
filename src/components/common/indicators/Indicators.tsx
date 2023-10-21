@@ -5,7 +5,9 @@ import Indicator from "./Indicator/Indicator.tsx";
 interface IIndicators {}
 
 function Indicators({ ...props }: IIndicators) {
-  const [dots, setDots] = useState<number[]>(new Array(5).fill(0));
+  const [dots, setDots] = useState<number[]>(
+    Array.from(new Array(5).fill(0), (x) => x + 1)
+  );
   const [activeDot, setActiveDot] = useState(0);
 
   return (
@@ -16,7 +18,7 @@ function Indicators({ ...props }: IIndicators) {
           className={styles.dot}
           onClick={() => setActiveDot(index)}
         >
-          <Indicator />
+          <Indicator color={activeDot === index ? "#6B6DFB" : "#DBDBDB"} />
         </div>
       ))}
     </div>
