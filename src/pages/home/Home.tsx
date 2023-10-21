@@ -7,9 +7,7 @@ interface IProps {}
 function Home({ ...props }: IProps) {
   return (
     <Layout>
-      <Header>
-        <CircleIndicator progress={progress} />
-      </Header>
+      <Header></Header>
     </Layout>
   );
 }

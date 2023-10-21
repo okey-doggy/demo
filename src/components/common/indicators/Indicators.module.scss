@@ -1,0 +1,10 @@
+@import "../../../styles/variable";
+
+.container {
+  display: flex;
+  width: var(--dimensions-width, 360px);
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
