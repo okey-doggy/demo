@@ -7,6 +7,7 @@ import Layout from "@/layout/Layout";
 import Header from "@/components/common/header/Header";
 import Indicators from "@/components/common/indicators/Indicators";
 import Loading from "@/Loading";
+import { useNavigate } from "react-router-dom";
 
 export interface IProfile {
   id: string;
@@ -18,6 +19,7 @@ export interface IProfile {
 function Buddy() {
   const [profiles, setProfiles] = useState<IProfile[]>([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.count("Buddy rendered");
@@ -75,10 +77,13 @@ function Buddy() {
           </div>
           <section className={styles.section}>
             {loading ? <Loading /> : <ProfileCard profiles={profiles} />}
-            <button className={(styles.cancel, styles.button)}>
-              반려견 추가 등록
+            <button className={styles.cancel}>반려견 추가 등록</button>
+            <button
+              className={styles.ok}
+              onClick={() => navigate("/matching/buddy/select-training")}
+            >
+              확인
             </button>
-            <button className={(styles.ok, styles.button)}>확인</button>
           </section>
         </div>
       </div>

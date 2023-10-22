@@ -29,6 +29,30 @@
 
     .section {
       margin-top: 6rem;
+
+      button {
+        width: 100%;
+        padding: 14px 10px;
+        font-size: 0.875rem;
+        font-family: Pretendard-Regular;
+        font-weight: 500;
+        line-height: 1;
+        word-wrap: break-word;
+
+        &.cancel {
+          color: $grey05;
+          background: $grey01;
+        }
+        &.ok {
+        }
+
+        &:hover {
+          background: $purple05;
+        }
+      }
+      Button ~ Button {
+        margin-top: $m05;
+      }
     }
   }
 }
