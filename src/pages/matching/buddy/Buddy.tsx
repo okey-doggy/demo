@@ -20,6 +20,10 @@ function Buddy() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.count("Buddy rendered");
+  });
+
+  useEffect(() => {
     axios
       .get("https://api.unsplash.com/search/photos?page=1&query=dog", {
         headers: {
@@ -39,11 +43,11 @@ function Buddy() {
             // Concatenate the unique results with the previous profiles
             return [
               ...prev,
-              ...uniqueResults.map((result: typeof results) => ({
+              ...uniqueResults.map((result: typeof results, i: number) => ({
                 id: result.id,
                 url: result.urls.raw,
                 alt_description: result.alt_description,
-                title: result.description,
+                title: `바둑이 ${i + 1}`,
               })),
             ];
           });

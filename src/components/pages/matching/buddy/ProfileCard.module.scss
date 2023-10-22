@@ -1,7 +1,78 @@
 @import "../../../../styles/variable";
 
-.card {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+.scroll::-webkit-scrollbar {
+  display: none !important;
+}
+
+.scroll {
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+}
+
+.cardWrapper::-webkit-scrollbar {
+  width: 0; /* 스크롤바 너비를 0으로 설정하여 숨깁니다. */
+  background: transparent; /* 스크롤바의 배경색을 투명으로 설정하여 숨깁니다. */
+}
+
+.cardWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow-x: auto;
+  margin-bottom: 79px;
+  /* 스크롤바 숨김 */
+  scrollbar-width: none; /* Firefox에 대한 설정 */
+  -ms-overflow-style: none; /* Internet Explorer 11에 대한 설정 */
+  scroll-snap-type: x mandatory; /* 가로 스크롤 스냅 설정 */
+  /* 스크롤 동작 설정 */
+  scroll-behavior: smooth; /* 부드러운 스크롤 동작 */
+
+  .cardBox {
+    .card {
+      position: relative;
+      width: 100%;
+      // height: 100%;
+      border-radius: 50%;
+      margin-right: $m2;
+
+      img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      & > .selected {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: url("../../../../assets/images/profile-selected.svg")
+          no-repeat center center;
+        z-index: 1;
+      }
+
+      & > .default {
+        position: relative;
+      }
+    }
+    .title {
+      width: 120px;
+      margin-top: $m05;
+      color: black;
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: Pretendard-Regular;
+      line-height: 1;
+      word-wrap: break-word;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+    }
+  }
 }

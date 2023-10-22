@@ -1,0 +1,17 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<circle cx="60" cy="60" r="58" fill="url(#pattern0)"/>
+<circle cx="60" cy="60" r="58" fill="#6164F9" fill-opacity="0.4"/>
+<circle cx="60" cy="60" r="58" stroke="#6B6DFB" stroke-width="4"/>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_625_2074" transform="matrix(0.000411353 0 0 0.000438327 -0.230769 0)"/>
+</pattern>
+</defs>
+  <g xmlns="http://www.w3.org/2000/svg" width="40" height="33" viewBox="0 0 40 33" fill="none"  transform="translate(40, 40)">
+    <circle cx="4.4" cy="12.1" r="4.4" fill="#ffffff"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.39965 19.7691L13.75 13.75L13.7819 13.7473C15.1772 12.3904 17.1118 11.55 19.25 11.55C21.8245 11.55 24.1039 12.7683 25.5019 14.6397L30.5687 19.3312C32.6933 20.6529 34.1 22.9556 34.1 25.575C34.1 29.6757 30.6526 33 26.4 33C23.599 33 21.1474 31.5579 19.8 29.4016C18.4526 31.5579 16.001 33 13.2 33C8.94741 33 5.5 29.6757 5.5 25.575C5.5 23.2248 6.63235 21.1296 8.39965 19.7691Z" fill="#ffffff"/>
+    <circle cx="34.65" cy="12.1" r="4.4" fill="#ffffff"/>
+    <circle cx="13.2" cy="4.4" r="4.4" fill="#ffffff"/>
+    <circle cx="25.85" cy="4.4" r="4.4" fill="#ffffff"/>
+  </g>
+</svg>
