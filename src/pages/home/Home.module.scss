@@ -1,11 +1,26 @@
 @import "../../styles/_variable";
 
 .container {
-  display: "flex";
-  place-content: "center";
-  flex-direction: "column";
-  width: "480px";
-  height: "100%";
-  align-items: "center";
-  background: "#6B6DFB";
+  display: flex;
+  place-content: center;
+  flex-direction: column;
+  width: 360px;
+  height: 100vh;
+  align-items: center;
+  background: $purple04;
+  text-align: center;
+
+  .title {
+    margin-bottom: $m2;
+    font-size: 60px;
+    font-weight: 600;
+    color: $white;
+  }
+
+  .button {
+    margin-top: $m2;
+    background: $white;
+    color: $purple04;
+    font-weight: 600;
+  }
 }

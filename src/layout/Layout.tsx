@@ -5,11 +5,7 @@ interface IProps {
   children: ReactNode;
 }
 function Layout({ ...props }: IProps) {
-  return (
-    <main className={styles.container}>
-      <div>{props.children}</div>
-    </main>
-  );
+  return <main className={styles.container}>{props.children}</main>;
 }
 
 export default Layout;
