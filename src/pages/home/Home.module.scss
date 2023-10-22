@@ -1,1 +1,11 @@
-@import "../../../styles/variable";
+@import "../../styles/_variable";
+
+.container {
+  display: "flex";
+  place-content: "center";
+  flex-direction: "column";
+  width: "480px";
+  height: "100%";
+  align-items: "center";
+  background: "#6B6DFB";
+}

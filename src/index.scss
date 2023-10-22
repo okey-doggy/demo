@@ -3,7 +3,7 @@
 @import "./styles/_reset.scss";
 
 :root {
-  font-family: Pretendard-Regular, Inter, system-ui, Avenir, Helvetica, Arial,
+  font-family: Pretendard, Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -17,6 +17,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  box-sizing: border-box;
+  font-family: Pretendard-Regular, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 #root {
   max-width: 1080px;
   max-height: 1920px;
@@ -28,13 +35,18 @@ a {
   text-decoration: inherit;
 }
 
+html {
+  font-family: Pretendard sans-serif;
+}
+
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  box-sizing: border-box;
+  background-color: black;
+  font-family: Pretendard sans-serif;
 }
 
 h1 {
@@ -50,6 +62,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: $purple04;
+  color: $white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
