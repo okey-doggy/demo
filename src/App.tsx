@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Buddy from "./pages/matching/buddy/Buddy";
+import SelectTraining from "./pages/matching/select-training/SelectTraining";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/matching">
         <Route path="buddy" element={<Buddy />} />
+        <Route path="select-training" element={<SelectTraining />} />
       </Route>
       <Route path="/" element={<Home />} />
     </Routes>
