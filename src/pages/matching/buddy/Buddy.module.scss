@@ -44,10 +44,9 @@
           background: $grey01;
         }
         &.ok {
-        }
-
-        &:hover {
-          background: $purple05;
+          &:hover {
+            background-color: $purple05;
+          }
         }
       }
       Button ~ Button {
