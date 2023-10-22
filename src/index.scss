@@ -3,7 +3,7 @@
 @import "./styles/_reset.scss";
 
 :root {
-  font-family: Pretendard, Inter, system-ui, Avenir, Helvetica, Arial,
+  font-family: Pretendard-Regular, Inter, system-ui, Helvetica, Arial,
     sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -36,7 +36,7 @@ a {
 }
 
 html {
-  font-family: Pretendard sans-serif;
+  font-family: Pretendard-Regular sans-serif;
 }
 
 body {
@@ -46,7 +46,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: black;
-  font-family: Pretendard sans-serif;
+  font-family: Pretendard-Regular sans-serif;
 }
 
 h1 {

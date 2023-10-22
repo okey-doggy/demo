@@ -10,17 +10,13 @@ function Loading() {
           width: "100%",
           height: "100%",
           opacity: 0.8,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          background: "transparent",
         }}
       >
-        <span
-          style={{
-            display: "block",
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
-          <Spinner />
-        </span>
+        <img src={Spinner} alt="spinner" />
       </div>
     </Layout>
   );
