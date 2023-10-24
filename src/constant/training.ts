@@ -1,4 +1,4 @@
-export const training = [
+export const trainings = [
   {
     id: 1,
     title: "문제 행동 교육",
