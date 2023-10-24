@@ -3,7 +3,7 @@ import Layout from "@/layout/Layout";
 import styles from "./SelectTraining.module.scss";
 import Header from "@/components/common/header/Header";
 import Indicators from "@/components/common/indicators/Indicators";
-import { training } from "@/constant/training";
+import { trainings } from "@/constant/training";
 import Education from "@/components/pages/matching/select-training/Education";
 
 function SelectTraining() {
@@ -21,9 +21,14 @@ function SelectTraining() {
             </p>
           </div>
           <section className={styles.section}>
-            {training.map((item) => (
+            {trainings.map((item, idx) => (
               <Fragment key={item.id}>
-                <Education title={item.title} description={item.description} />
+                <Education
+                  id={item.id}
+                  title={item.title}
+                  description={item.description}
+                  index={idx}
+                />
               </Fragment>
             ))}
           </section>
