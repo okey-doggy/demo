@@ -44,6 +44,8 @@
           background: $grey01;
         }
         &.ok {
+          color: $white;
+          background: $purple04;
           &:hover {
             background-color: $purple05;
           }

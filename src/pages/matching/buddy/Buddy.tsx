@@ -62,7 +62,9 @@ function Buddy() {
       });
   }, []);
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <Layout>
       <div className={styles.container}>
         <Header>
@@ -76,11 +78,11 @@ function Buddy() {
             </p>
           </div>
           <section className={styles.section}>
-            {loading ? <Loading /> : <ProfileCard profiles={profiles} />}
+            <ProfileCard profiles={profiles} />
             <button className={styles.cancel}>반려견 추가 등록</button>
             <button
               className={styles.ok}
-              onClick={() => navigate("/matching/buddy/select-training")}
+              onClick={() => navigate("/matching/select-training")}
             >
               확인
             </button>

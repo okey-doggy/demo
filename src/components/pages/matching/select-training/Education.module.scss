@@ -1,0 +1,55 @@
+@import "../../../../styles/_variable";
+
+.article {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 12px 12px $p1 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px #dadada solid;
+  gap: 8px;
+  cursor: pointer;
+
+  .title {
+    color: $grey05;
+    font-size: 1rem;
+    font-weight: 500;
+    word-wrap: break-word;
+  }
+  .description {
+    width: 100%;
+    margin-top: $m05;
+    color: black;
+    font-size: 0.875rem;
+    font-weight: 400;
+    word-wrap: break-word;
+    line-height: 1.2;
+  }
+
+  &.clicked {
+    border: 1px solid $purple04;
+    background-color: $purple01;
+    & > .title {
+      color: $purple04;
+      font-weight: bold;
+    }
+    & > .description {
+      color: $purple04;
+    }
+  }
+
+  &:hover {
+    background-color: $purple01;
+    border: 1px solid $purple04;
+    & > .title {
+      color: $purple04;
+      font-weight: bold;
+    }
+    & > .description {
+      color: $purple04;
+    }
+  }
+}

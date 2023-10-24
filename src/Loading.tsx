@@ -4,7 +4,19 @@ import Layout from "./layout/Layout";
 
 function Loading() {
   return (
-    <Layout>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignContent: "center",
+        flexDirection: "column",
+        minWidth: "360px",
+        minHeight: "640px",
+        width: "360px",
+        height: "100vh",
+        backgroundColor: "#fff",
+      }}
+    >
       <div
         style={{
           width: "100%",
@@ -13,12 +25,11 @@ function Loading() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background: "transparent",
         }}
       >
         <img src={Spinner} alt="spinner" />
       </div>
-    </Layout>
+    </div>
   );
 }
 
