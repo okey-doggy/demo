@@ -40,16 +40,4 @@
       color: $purple04;
     }
   }
-
-  &:hover {
-    background-color: $purple01;
-    border: 1px solid $purple04;
-    & > .title {
-      color: $purple04;
-      font-weight: bold;
-    }
-    & > .description {
-      color: $purple04;
-    }
-  }
 }

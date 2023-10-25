@@ -5,6 +5,7 @@ import Header from "@/components/common/header/Header";
 import Indicators from "@/components/common/indicators/Indicators";
 import { trainings } from "@/constant/training";
 import Education from "@/components/pages/matching/select-training/Education";
+import { Outlet } from "react-router-dom";
 
 function SelectTraining() {
   return (

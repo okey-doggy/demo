@@ -3,6 +3,7 @@ import Home from "./pages/home/Home";
 import Buddy from "./pages/matching/buddy/Buddy";
 import SelectTraining from "./pages/matching/select-training/SelectTraining";
 import Detail from "./components/pages/matching/select-training/detail/Detail";
+import Accordion from "./components/pages/matching/select-training/detail/accordion/Accordion";
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/matching">
         <Route path="buddy" element={<Buddy />} />
-        <Route path="select-training" element={<SelectTraining />}>
-          <Route path="detail" element={<Detail />} />
+        <Route path="select-training" element={<SelectTraining />} />
+        <Route path="detail" element={<Detail />}>
+          <Route path=":id" element={<Accordion />} />
         </Route>
       </Route>
       <Route path="/" element={<Home />} />
