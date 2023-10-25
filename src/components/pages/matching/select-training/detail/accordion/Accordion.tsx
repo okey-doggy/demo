@@ -38,10 +38,16 @@ function Accordion() {
                     })
                   }
                 >
-                  <div className={styles.title}>{item.title}</div>
-                  <div className={styles.dropdown}></div>
+                  <div className={styles.title}>
+                    {item.title}
+                    <p>{clicked[i + 1] && item.description}</p>
+                  </div>
+                  {clicked[i + 1] ? (
+                    <div className={styles.select}></div>
+                  ) : (
+                    <div className={styles.dropdown}></div>
+                  )}
                 </div>
-                {clicked[i + 1] && <div>{item.description}</div>}
               </>
             ))}
           </section>
