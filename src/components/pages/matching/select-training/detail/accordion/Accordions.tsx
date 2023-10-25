@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from "./Accordion.module.scss";
-import Layout from "@/layout/Layout";
 import { useParams } from "react-router-dom";
+import styles from "./Accordions.module.scss";
+import Layout from "@/layout/Layout";
 import Header from "@/components/common/header/Header";
 import Indicators from "@/components/common/indicators/Indicators";
 import { trainings } from "@/constant/training";
@@ -26,10 +26,9 @@ function Accordion() {
           </div>
           <section className={styles.section}>
             {trainings[index].data.map((item, i) => (
-              <>
+              <div key={item.id} className={styles.wrapper}>
                 <div
                   className={styles.accordion}
-                  key={item.id}
                   onClick={() =>
                     setClicked((prev) => {
                       const temp = [...prev];
@@ -38,17 +37,17 @@ function Accordion() {
                     })
                   }
                 >
-                  <div className={styles.title}>
-                    {item.title}
-                    <p>{clicked[i + 1] && item.description}</p>
-                  </div>
+                  <div className={styles.title}>{item.title}</div>
                   {clicked[i + 1] ? (
                     <div className={styles.select}></div>
                   ) : (
                     <div className={styles.dropdown}></div>
                   )}
                 </div>
-              </>
+                {clicked[i + 1] && (
+                  <p className={styles.description}>{item.description}</p>
+                )}
+              </div>
             ))}
           </section>
         </div>

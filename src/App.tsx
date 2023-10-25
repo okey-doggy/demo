@@ -3,7 +3,7 @@ import Home from "./pages/home/Home";
 import Buddy from "./pages/matching/buddy/Buddy";
 import SelectTraining from "./pages/matching/select-training/SelectTraining";
 import Detail from "./components/pages/matching/select-training/detail/Detail";
-import Accordion from "./components/pages/matching/select-training/detail/accordion/Accordion";
+import Accordion from "./components/pages/matching/select-training/detail/accordion/Accordions";
 
 function App() {
   return (

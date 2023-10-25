@@ -29,7 +29,7 @@
     line-height: 1.2;
   }
 
-  &.clicked {
+  &:hover {
     border: 1px solid $purple04;
     background-color: $purple01;
     & > .title {
