@@ -1,21 +1,26 @@
 import { useState } from "react";
 import styles from "./Education.module.scss";
-import { useNavigate } from "react-router-dom";
 
-function Education({ ...props }) {
-  const [clicked, setClicked] = useState(false);
-  const navigate = useNavigate();
+interface IEducation {
+  id: number;
+  title: string;
+  description: string;
+  index: number;
+  clicked: [boolean, boolean];
+  handleClick: (id: number, index: number) => void;
+}
+function Education({ ...props }: IEducation) {
+  const { id, title, description, index, clicked, handleClick } = props;
+
+  console.log(id, index, clicked);
 
   return (
     <article
-      className={`${styles.article} ${clicked ? styles.clicked : ""}}`}
-      onClick={() => {
-        setClicked(!clicked);
-        navigate(`/matching/detail/${props.id}`);
-      }}
+      className={`${styles.article} ${clicked[index] ? styles.clicked : ""}`}
+      onClick={() => handleClick(id, index)}
     >
-      <div className={styles.title}>{props.title}</div>
-      <div className={styles.description}>{props.description}</div>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.description}>{description}</div>
     </article>
   );
 }
