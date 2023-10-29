@@ -1,0 +1,59 @@
+@import "../../../styles/_variable";
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 640px;
+
+  .contents {
+    height: 60%;
+    min-height: 375px;
+    padding: 0 $p3;
+
+    .titlebox {
+      color: $grey06;
+
+      .title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding-bottom: $p05;
+        line-height: 1; /* 171.429% */
+      }
+
+      .subtitle {
+        color: #1a1f27;
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.71;
+      }
+    }
+    .section {
+      margin-top: $m3;
+    }
+  }
+  .buttonWrapper {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 $p3;
+    text-align: center;
+    gap: 8px;
+
+    .before {
+      width: 104px;
+      padding: 14px 10px;
+      border-radius: 8px;
+      background: $grey01;
+      color: $grey05;
+    }
+
+    .complete {
+      width: 208px;
+      padding: 14px 10px;
+      border-radius: 8px;
+    }
+  }
+}

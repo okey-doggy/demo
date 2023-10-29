@@ -11,9 +11,6 @@ interface IEducation {
 }
 function Education({ ...props }: IEducation) {
   const { id, title, description, index, clicked, handleClick } = props;
-
-  console.log(id, index, clicked);
-
   return (
     <article
       className={`${styles.article} ${clicked[index] ? styles.clicked : ""}`}

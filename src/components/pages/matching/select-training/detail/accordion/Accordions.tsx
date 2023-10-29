@@ -18,7 +18,6 @@ function Accordion() {
     new Array(trainings[index].data.length).fill(false)
   );
 
-  console.log(selectClicked);
   return (
     <Layout>
       <div className={styles.container}>
@@ -32,11 +31,14 @@ function Accordion() {
           </div>
           <section className={styles.section}>
             {trainings[index].data.map((item, i) => (
-              <div key={item.id} className={styles.wrapper}>
+              <div
+                key={item.id}
+                className={`${styles.wrapper} ${
+                  selectClicked[i] ? styles.clicked : ""
+                }`}
+              >
                 <div
-                  className={`${styles.accordion} ${
-                    selectClicked[i] ? styles.selected : ""
-                  }}`}
+                  className={styles.accordion}
                   onClick={() => {
                     setSelectClicked((prev) => {
                       const newClicked = prev.map((item, idx) => {
@@ -77,7 +79,12 @@ function Accordion() {
           </button>
           <button
             className={styles.complete}
-            onClick={() => navigate(`/matching/detail/${id}`)}
+            disabled={selectClicked.every((item) => item === false)}
+            onClick={() => {
+              selectClicked.lastIndexOf(true) === selectClicked.length - 1
+                ? navigate(`/matching/detail/etc`)
+                : navigate(`/matching/select-place`);
+            }}
           >
             선택 완료
           </button>

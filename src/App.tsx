@@ -4,6 +4,8 @@ import Buddy from "./pages/matching/buddy/Buddy";
 import SelectTraining from "./pages/matching/select-training/SelectTraining";
 import Detail from "./pages/matching/detail/Detail";
 import Accordion from "./components/pages/matching/select-training/detail/accordion/Accordions";
+import Etc from "./components/pages/matching/select-training/detail/etc/Etc";
+import SelectPlace from "./pages/matching/select-place/SelectPlace";
 
 function App() {
   return (
@@ -14,9 +16,11 @@ function App() {
         <Route path="select-training" element={<SelectTraining />} />
         <Route path="detail" element={<Detail />}>
           <Route path=":id" element={<Accordion />} />
+          <Route path="etc" element={<Etc />} />
         </Route>
+        <Route path="detail" element={<SelectPlace />} />
+        <Route path="select-place" element={<Home />} />
       </Route>
-      <Route path="/" element={<Home />} />
     </Routes>
   );
 }
