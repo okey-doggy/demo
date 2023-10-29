@@ -35,7 +35,7 @@ function Etc() {
           </button>
           <button
             className={styles.complete}
-            onClick={() => navigate(`/matching/select-place`)}
+            onClick={() => navigate(`/matching/methods`)}
           >
             다음
           </button>

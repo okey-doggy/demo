@@ -83,7 +83,7 @@ function Accordion() {
             onClick={() => {
               selectClicked.lastIndexOf(true) === selectClicked.length - 1
                 ? navigate(`/matching/detail/etc`)
-                : navigate(`/matching/select-place`);
+                : navigate(`/matching/methods`);
             }}
           >
             선택 완료
