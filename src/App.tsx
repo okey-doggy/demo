@@ -6,6 +6,7 @@ import Detail from "./pages/matching/detail/Detail";
 import Accordion from "./components/pages/matching/training/detail/accordion/Accordions";
 import Etc from "./components/pages/matching/training/detail/etc/Etc";
 import Methods from "./pages/matching/methods/Methods";
+import Place from "./pages/matching/methods/place/Place";
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
           <Route path=":id" element={<Accordion />} />
           <Route path="etc" element={<Etc />} />
         </Route>
-        <Route path="methods" element={<Methods />} />
+        <Route path="methods" element={<Methods />}>
+          <Route path="place" element={<Place />} />
+        </Route>
       </Route>
     </Routes>
   );
