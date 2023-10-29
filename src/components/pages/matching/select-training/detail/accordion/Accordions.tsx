@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./Accordions.module.scss";
 import Layout from "@/layout/Layout";
 import Header from "@/components/common/header/Header";
@@ -8,11 +8,17 @@ import { trainings } from "@/constant/training";
 
 function Accordion() {
   const { id } = useParams();
-  const index = parseInt(id as string);
+  const navigate = useNavigate();
+  const index = parseInt(id as string) - 1;
+
+  const [selectClicked, setSelectClicked] = useState(
+    new Array(trainings[index].data.length).fill(false)
+  );
   const [clicked, setClicked] = useState(
     new Array(trainings[index].data.length).fill(false)
   );
 
+  console.log(selectClicked);
   return (
     <Layout>
       <div className={styles.container}>
@@ -28,28 +34,53 @@ function Accordion() {
             {trainings[index].data.map((item, i) => (
               <div key={item.id} className={styles.wrapper}>
                 <div
-                  className={styles.accordion}
-                  onClick={() =>
-                    setClicked((prev) => {
-                      const temp = [...prev];
-                      temp[item.id] = !temp[item.id];
-                      return temp;
-                    })
-                  }
+                  className={`${styles.accordion} ${
+                    selectClicked[i] ? styles.selected : ""
+                  }}`}
+                  onClick={() => {
+                    setSelectClicked((prev) => {
+                      const newClicked = prev.map((item, idx) => {
+                        if (idx === i) {
+                          return !item;
+                        }
+                        return false;
+                      });
+
+                      return newClicked;
+                    });
+                  }}
                 >
                   <div className={styles.title}>{item.title}</div>
-                  {clicked[i + 1] ? (
-                    <div className={styles.select}></div>
-                  ) : (
-                    <div className={styles.dropdown}></div>
-                  )}
+                  <div
+                    className={`${
+                      clicked[i] ? styles.select : styles.dropdown
+                    }`}
+                    onClick={() =>
+                      setClicked((prev) => {
+                        const temp = [...prev];
+                        temp[item.id - 1] = !temp[item.id - 1];
+                        return temp;
+                      })
+                    }
+                  ></div>
                 </div>
-                {clicked[i + 1] && (
+                {clicked[i] && (
                   <p className={styles.description}>{item.description}</p>
                 )}
               </div>
             ))}
           </section>
+        </div>
+        <div className={styles.buttonWrapper}>
+          <button className={styles.before} onClick={() => navigate(-1)}>
+            이전
+          </button>
+          <button
+            className={styles.complete}
+            onClick={() => navigate(`/matching/detail/${id}`)}
+          >
+            선택 완료
+          </button>
         </div>
       </div>
     </Layout>

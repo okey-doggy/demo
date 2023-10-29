@@ -34,7 +34,7 @@ export const trainings = [
         description: "자신의 배설물을 먹는 반려견을 위한 교육",
       },
       {
-        id: 5,
+        id: 6,
         title: "기타",
         description:
           "기타 반려견과 함께 살아가면서 문제행동에 대한 행동교정 교육",

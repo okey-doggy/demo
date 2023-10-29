@@ -1,11 +1,12 @@
 import React, { Fragment, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "@/layout/Layout";
 import styles from "./SelectTraining.module.scss";
+
 import Header from "@/components/common/header/Header";
 import Indicators from "@/components/common/indicators/Indicators";
-import { trainings } from "@/constant/training";
 import Education from "@/components/pages/matching/select-training/Education";
-import { useNavigate } from "react-router-dom";
+import { trainings } from "@/constant/training";
 
 function SelectTraining() {
   const navigate = useNavigate();
@@ -17,12 +18,10 @@ function SelectTraining() {
     setSelectId(id);
     setSelectIdx(index);
     setClicked((prev) => {
-      const newState = [...prev];
+      const newState = [...prev] as [boolean, boolean];
       newState[index] = !newState[index];
       const [first, second] = newState;
-      return first === second
-        ? [index === 0, index === 1]
-        : (newState as [boolean, boolean]);
+      return first === second ? [index === 0, index === 1] : newState;
     });
   };
 
