@@ -11,6 +11,7 @@ function Place() {
       <div className={styles.textbox}>
         <input
           type="text"
+          readOnly
           value={place.roadAddress}
           className={styles.textarea}
           placeholder="우편번호 검색"
