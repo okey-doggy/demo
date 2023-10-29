@@ -14,10 +14,11 @@
       color: $grey06;
 
       .title {
-        font-size: 1.5rem;
+        font-size: 24px;
         font-weight: 700;
         padding-bottom: $p05;
         line-height: 1; /* 171.429% */
+        letter-spacing: -0.1px;
       }
 
       .subtitle {

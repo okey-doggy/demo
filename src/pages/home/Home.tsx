@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import Layout from "@/layout/Layout";
 import styles from "./Home.module.scss";
 import Dogs from "@/assets/images/dogs.svg";
 
-interface IProps {}
-
-function Home({ ...props }: IProps) {
+function Home() {
   const navigate = useNavigate();
 
   return (

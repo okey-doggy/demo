@@ -1,14 +1,14 @@
 import React, { Fragment, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "@/layout/Layout";
-import styles from "./SelectTraining.module.scss";
+import styles from "./Training.module.scss";
 
 import Header from "@/components/common/header/Header";
 import Indicators from "@/components/common/indicators/Indicators";
 import Education from "@/components/pages/matching/select-training/Education";
 import { trainings } from "@/constant/training";
 
-function SelectTraining() {
+function Training() {
   const navigate = useNavigate();
   const [clicked, setClicked] = useState<[boolean, boolean]>([false, false]);
   const [selectId, setSelectId] = useState<number | undefined>();
@@ -70,4 +70,4 @@ function SelectTraining() {
   );
 }
 
-export default SelectTraining;
+export default Training;

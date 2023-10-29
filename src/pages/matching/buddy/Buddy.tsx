@@ -82,7 +82,7 @@ function Buddy() {
             <button className={styles.cancel}>반려견 추가 등록</button>
             <button
               className={styles.ok}
-              onClick={() => navigate("/matching/select-training")}
+              onClick={() => navigate("/matching/training")}
             >
               확인
             </button>
