@@ -5,7 +5,7 @@ import styles from "./Training.module.scss";
 
 import Header from "@/components/common/header/Header";
 import Indicators from "@/components/common/indicators/Indicators";
-import Education from "@/components/pages/matching/select-training/Education";
+import Education from "@/components/pages/matching/training/Education";
 import { trainings } from "@/constant/training";
 
 function Training() {

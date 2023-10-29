@@ -3,8 +3,8 @@ import Home from "./pages/home/Home";
 import Buddy from "./pages/matching/buddy/Buddy";
 import Training from "./pages/matching/training/Training";
 import Detail from "./pages/matching/detail/Detail";
-import Accordion from "./components/pages/matching/select-training/detail/accordion/Accordions";
-import Etc from "./components/pages/matching/select-training/detail/etc/Etc";
+import Accordion from "./components/pages/matching/training/detail/accordion/Accordions";
+import Etc from "./components/pages/matching/training/detail/etc/Etc";
 import Methods from "./pages/matching/methods/Methods";
 
 function App() {
