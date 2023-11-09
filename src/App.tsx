@@ -11,7 +11,7 @@ import Place from "./pages/matching/methods/place/Place";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Buddy />} />
       <Route path="/matching">
         <Route path="buddy" element={<Buddy />} />
         <Route path="training" element={<Training />} />
