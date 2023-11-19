@@ -4,9 +4,12 @@ import Underline from "@/assets/images/underline.svg";
 import styles from "./Date.module.scss";
 import { useDate } from "./useDate";
 import Calender from "./Calendar/Calender";
+import { createPortal } from "react-dom";
+import useCalendarModalStore from "@/store/useCalendarModalStore";
 
 function Date() {
-  const [clicked, setClicked] = useState(false);
+  const { isOpen, open, close } = useCalendarModalStore();
+
   return (
     <>
       <div className={styles.textbox}>
@@ -15,11 +18,11 @@ function Date() {
           readOnly
           className={styles.textarea}
           placeholder="2023년 9월 9일 ~ 2023년 9월 9일"
-          onClick={() => setClicked(!clicked)}
+          onClick={open}
         />
 
         <img src={Underline} alt="underline" className={styles.underline} />
-        <Calender />
+        {isOpen && createPortal(<Calender close={close} />, document.body)}
       </div>
     </>
   );
