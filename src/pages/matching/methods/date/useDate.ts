@@ -8,21 +8,20 @@ export const useDate = () => {
   ]);
   const [startDate, endDate] = dateRange;
 
-  // const handleDateChange = useCallback(
-  //   (date: Date | null) => {
-  //     if (date) {
-  //       setStartDate(date);
-  //     } else {
-  //       setStartDate(today);
-  //     }
-  //   },
-  //   [today]
-  // );
+  const handleDateChange = useCallback((update: [Date | null, Date | null]) => {
+    const isNotNull = update.some((date) => date !== null);
+    isNotNull && setDateRange(update);
+  }, []);
+
+  const addMonths = (date: Date) => {
+    return new Date(date.setMonth(date.getMonth() + 2));
+  };
 
   return {
     startDate,
     endDate,
     dateRange,
-    setDateRange,
+    handleDateChange,
+    addMonths,
   };
 };
