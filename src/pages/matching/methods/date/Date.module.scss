@@ -1,0 +1,29 @@
+@import "../../../../styles/variable";
+
+.textbox {
+  margin-bottom: 36px;
+  .textarea {
+    position: relative;
+    display: flex;
+    width: 312px;
+    border: none;
+    background-color: $white;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+
+    color: $grey07;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+
+    &::placeholder {
+      color: $grey03;
+    }
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+}

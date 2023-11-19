@@ -14,9 +14,20 @@ function Methods() {
   const [clicked, setClicked] = useState(new Array(methods.length).fill(false));
 
   const isPlacePath = useMemo(() => pathname.includes("place"), [pathname]);
-
+  const isDatePath = useMemo(() => pathname.includes("date"), [pathname]);
+  console.log(pathname);
+  const pathTitle = (path: string) => {
+    switch (path) {
+      case "/matching/methods/place":
+        return "바둑이가 훈련 받을 수 있는 장소를 알려주세요.";
+      case "/matching/methods/date":
+        return "훈련 가능일";
+      default:
+        return "훈련 방법";
+    }
+  };
   const renderContent = () => {
-    if (isPlacePath) {
+    if (isPlacePath || isDatePath) {
       return <Outlet />;
     } else {
       return (
@@ -43,11 +54,7 @@ function Methods() {
         <div className={styles.contents}>
           <div className={styles.titlebox}>
             <h1 className={styles.title}>훈련 장소와 방법을 선택해주세요.</h1>
-            <p className={styles.subtitle}>
-              {isPlacePath
-                ? "바둑이가 훈련 받을 수 있는 장소를 알려주세요."
-                : "훈련 방법"}
-            </p>
+            <p className={styles.subtitle}>{pathTitle(pathname)}</p>
           </div>
           <section className={styles.section}>{renderContent()}</section>
         </div>

@@ -7,6 +7,7 @@ import Accordion from "./components/pages/matching/training/detail/accordion/Acc
 import Etc from "./components/pages/matching/training/detail/etc/Etc";
 import Methods from "./pages/matching/methods/Methods";
 import Place from "./pages/matching/methods/place/Place";
+import Date from "./pages/matching/methods/date/Date";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         </Route>
         <Route path="methods" element={<Methods />}>
           <Route path="place" element={<Place />} />
+          <Route path="date" element={<Date />} />
         </Route>
       </Route>
     </Routes>
