@@ -1,0 +1,64 @@
+@import "../../../../../styles/variable";
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 360px;
+  width: 360px;
+  height: 640px;
+
+  z-index: 1000;
+  background-color: white;
+  font-family: Pretendard-Regular;
+
+  .contents {
+    width: 100%;
+    height: 100%;
+    min-height: 375px;
+    padding: 0 $p3;
+    margin-top: 65px;
+
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    .closeButton {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      outline: none;
+      color: $grey06;
+    }
+
+    .titlebox {
+      color: $grey06;
+
+      .title {
+        margin-top: 16px;
+
+        font-size: 24px;
+        font-weight: 700;
+        padding-bottom: $p05;
+        line-height: 1; /* 171.429% */
+        letter-spacing: -0.1px;
+      }
+
+      .subtitle {
+        color: #1a1f27;
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.71;
+      }
+    }
+    .section {
+      margin-top: $m3;
+    }
+  }
+  .contents::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+}
