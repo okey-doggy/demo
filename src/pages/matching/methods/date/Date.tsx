@@ -5,7 +5,6 @@ import { createPortal } from "react-dom";
 import useCalendarModalStore from "@/store/useCalendarModalStore";
 import { useDateStore } from "@/store/useDateStore";
 import { DateClass } from "@/libs/date";
-import { da } from "date-fns/locale";
 
 function Date() {
   const { isOpen, open, close } = useCalendarModalStore();
