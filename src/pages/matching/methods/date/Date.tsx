@@ -1,15 +1,19 @@
-import React, { useState } from "react";
-
 import Underline from "@/assets/images/underline.svg";
 import styles from "./Date.module.scss";
-import { useDate } from "./useDate";
 import Calender from "./Calendar/Calender";
 import { createPortal } from "react-dom";
 import useCalendarModalStore from "@/store/useCalendarModalStore";
+import { useDateStore } from "@/store/useDateStore";
+import { DateClass } from "@/libs/date";
+import { da } from "date-fns/locale";
 
 function Date() {
   const { isOpen, open, close } = useCalendarModalStore();
+  const { dateRange } = useDateStore();
+  const [startDate, endDate] = dateRange;
 
+  const sDate = startDate && new DateClass(startDate);
+  const eDate = endDate && new DateClass(endDate);
   return (
     <>
       <div className={styles.textbox}>
@@ -18,6 +22,11 @@ function Date() {
           readOnly
           className={styles.textarea}
           placeholder="2023년 9월 9일 ~ 2023년 9월 9일"
+          value={
+            startDate && endDate
+              ? `${sDate?.dateTemplate()} ~ ${eDate?.dateTemplate()}`
+              : ""
+          }
           onClick={open}
         />
 

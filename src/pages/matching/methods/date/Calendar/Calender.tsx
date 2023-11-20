@@ -4,11 +4,13 @@ import ko from "date-fns/locale/ko";
 import { useDate } from "../useDate";
 import "./Calendar.css";
 import styles from "./Calendar.module.scss";
+import { useNavigate } from "react-router-dom";
 
 registerLocale("ko", ko);
 
 function Calender({ close }: { close: () => void }) {
   const { startDate, endDate, handleDateChange, addMonths } = useDate();
+
   return (
     <div className={styles.modal}>
       <div className={styles.contents}>
@@ -38,6 +40,14 @@ function Calender({ close }: { close: () => void }) {
             showDisabledMonthNavigation
           />
         </section>
+        <div className={styles.buttonWrapper}>
+          <button className={styles.before} onClick={close}>
+            취소
+          </button>
+          <button className={styles.complete} onClick={close}>
+            완료
+          </button>
+        </div>
       </div>
     </div>
   );

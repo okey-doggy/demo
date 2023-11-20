@@ -6,26 +6,21 @@ import styles from "./Methods.module.scss";
 import Header from "@/components/common/header/Header";
 import Indicators from "@/components/common/indicators/Indicators";
 import Content from "@/components/pages/matching/methods/content/Content";
-import { methods } from "@/constant/methods";
+import { useMethods } from "./useMethos";
 
 function Methods() {
-  const navigate = useNavigate();
-  const { pathname } = useLocation();
-  const [clicked, setClicked] = useState(new Array(methods.length).fill(false));
-
-  const isPlacePath = useMemo(() => pathname.includes("place"), [pathname]);
-  const isDatePath = useMemo(() => pathname.includes("date"), [pathname]);
-  console.log(pathname);
-  const pathTitle = (path: string) => {
-    switch (path) {
-      case "/matching/methods/place":
-        return "바둑이가 훈련 받을 수 있는 장소를 알려주세요.";
-      case "/matching/methods/date":
-        return "훈련 가능일";
-      default:
-        return "훈련 방법";
-    }
-  };
+  const {
+    isPlacePath,
+    isDatePath,
+    methods,
+    clicked,
+    setClicked,
+    pathTitle,
+    pathname,
+    isCompleteButtonDisabled,
+    handleNextClick,
+    goBack,
+  } = useMethods();
   const renderContent = () => {
     if (isPlacePath || isDatePath) {
       return <Outlet />;
@@ -35,15 +30,6 @@ function Methods() {
       );
     }
   };
-
-  const handleNextClick = () => {
-    navigate("/matching/methods/place");
-  };
-
-  const isCompleteButtonDisabled = useMemo(
-    () => clicked.every((_) => _ === false),
-    [clicked]
-  );
 
   return (
     <Layout>
@@ -59,7 +45,7 @@ function Methods() {
           <section className={styles.section}>{renderContent()}</section>
         </div>
         <div className={styles.buttonWrapper}>
-          <button className={styles.before} onClick={() => navigate(-1)}>
+          <button className={styles.before} onClick={goBack}>
             이전
           </button>
           <button
