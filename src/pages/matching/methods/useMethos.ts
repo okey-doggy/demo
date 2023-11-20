@@ -24,7 +24,7 @@ export const useMethods = () => {
 
   const handleNextClick = () => {
     if (isPlacePath) return navigate("/matching/methods/date");
-    if (isDatePath) return navigate("/matching/training");
+    if (isDatePath) return navigate("/matching/trainer");
     return navigate("/matching/methods/place");
   };
 
