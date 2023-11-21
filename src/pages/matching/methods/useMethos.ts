@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { methods } from "@/constant/methods";
 import { usePlaceStore } from "@/store/usePlaceStore";
 import { useDateStore } from "@/store/useDateStore";
+import { _DATE_PATH, _PLACE_PATH } from "./constants";
 
 export const useMethods = () => {
   const navigate = useNavigate();
@@ -18,9 +19,9 @@ export const useMethods = () => {
   const goBack = () => navigate(-1);
   const pathTitle = (path: string) => {
     switch (path) {
-      case "/matching/methods/place":
+      case _PLACE_PATH:
         return "바둑이가 훈련 받을 수 있는 장소를 알려주세요.";
-      case "/matching/methods/date":
+      case _DATE_PATH:
         return "훈련 가능일";
       default:
         return "훈련 방법";
@@ -45,11 +46,7 @@ export const useMethods = () => {
   );
 
   const disabledPlace = useMemo(() => {
-    if (zipCode === "" || roadAddress === "" || detailAddress === "") {
-      return true;
-    } else {
-      return false;
-    }
+    return zipCode === "" || roadAddress === "" || detailAddress === "";
   }, [detailAddress, roadAddress, zipCode]);
 
   const disabledDate = useMemo(() => {
