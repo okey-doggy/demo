@@ -1,0 +1,72 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "박지원",
+      "nickname": "버디 엄마",
+      "email": "abc@test.com",
+      "phone": "010-1234-5678",
+      "address": "서울시 강남구",
+      "training": {
+        "id": 1,
+        "name": "중대형견 전문 트레이닝",
+        "price": 40000,
+        "description": "중대형견 전문 트레이닝입니다.",
+        "thumbnail": "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_960_720.jpg",
+        "reviews": 140,
+        "images": [
+          "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_960_720.jpg"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "박보라",
+      "nickname": "몰리 이모",
+      "email": "moly@test.com",
+      "phone": "010-0000-1234",
+      "address": "서울시 종로구",
+      "training": {
+        "id": 2,
+        "name": "중대형견 전문 트레이닝",
+        "price": 30000,
+        "description": "중대형견 전문 트레이닝입니다.",
+        "thumbnail": "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_960_720.jpg",
+        "reviews": 18,
+        "images": []
+      }
+    },
+    {
+      "id": 3,
+      "name": "김유진",
+      "nickname": "코코 엄마",
+      "email": "coco@test.com",
+      "phone": "010-0000-1111",
+      "address": "서울시 마포구",
+      "training": {
+        "id": 3,
+        "name": "중대형견 전문 트레이닝",
+        "price": 30000,
+        "description": "중대형견 전문 트레이닝입니다.",
+        "thumbnail": "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_960_720.jpg",
+        "reviews": 5
+      }
+    },
+    {
+      "id": 4,
+      "name": "김호균",
+      "nickname": "바둑이 아빠",
+      "email": "baduk@test.com",
+      "phone": "010-8888-9999",
+      "address": "경기도 성남시",
+      "training": {
+        "id": 3,
+        "name": "중대형견 전문 트레이닝",
+        "price": 35000,
+        "description": "중대형견 전문 트레이닝입니다.",
+        "thumbnail": "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_960_720.jpg",
+        "reviews": 47
+      }
+    }
+  ]
+}
