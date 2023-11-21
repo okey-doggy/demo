@@ -50,7 +50,7 @@ function Methods() {
           </button>
           <button
             className={styles.complete}
-            disabled={isCompleteButtonDisabled}
+            disabled={isCompleteButtonDisabled()}
             onClick={handleNextClick}
           >
             다음

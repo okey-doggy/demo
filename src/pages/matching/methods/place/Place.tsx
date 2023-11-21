@@ -4,7 +4,7 @@ import { usePlace } from "./usePlace";
 import Postcode from "@/components/pages/matching/methods/postcode/Postcode";
 
 function Place() {
-  const place = usePlace();
+  const { address, ...place } = usePlace();
 
   return (
     <>
@@ -12,7 +12,7 @@ function Place() {
         <input
           type="text"
           readOnly
-          value={place.roadAddress}
+          value={address.roadAddress}
           className={styles.textarea}
           placeholder="우편번호 검색"
           onClick={place.handleToggle}
@@ -25,7 +25,7 @@ function Place() {
           className={styles.textarea}
           placeholder="상세주소 입력 (선택)"
           onChange={place.handleChange}
-          value={place.detailAddress}
+          value={address.detailAddress}
         />
         <img src={Underline} alt="underline" className={styles.underline} />
         <Postcode isOpen={place.isOpen} handleComplete={place.handleComplete} />

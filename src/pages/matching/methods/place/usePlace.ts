@@ -1,24 +1,16 @@
+import { usePlaceStore } from "@/store/usePlaceStore";
 import { useState } from "react";
 
 export const usePlace = () => {
-  const [zipCode, setZipcode] = useState<string>("");
-  const [roadAddress, setRoadAddress] = useState<string>("");
-  const [detailAddress, setDetailAddress] = useState<string>("");
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const handleComplete = (data: { zonecode: string; roadAddress: string }) => {
-    setZipcode(data.zonecode);
-    setRoadAddress(data.roadAddress);
-    setIsOpen(false);
-  };
-
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDetailAddress(e.target.value);
-  };
+  const {
+    zipCode,
+    roadAddress,
+    detailAddress,
+    isOpen,
+    handleComplete,
+    handleToggle,
+    handleChange,
+  } = usePlaceStore();
 
   const handleClick = () => {
     if (detailAddress === "") {
@@ -29,9 +21,11 @@ export const usePlace = () => {
   };
 
   return {
-    zipCode,
-    roadAddress,
-    detailAddress,
+    address: {
+      zipCode,
+      roadAddress,
+      detailAddress,
+    },
     isOpen,
     handleComplete,
     handleToggle,

@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { methods } from "@/constant/methods";
+import { usePlaceStore } from "@/store/usePlaceStore";
+import { useDateStore } from "@/store/useDateStore";
 
 export const useMethods = () => {
   const navigate = useNavigate();
@@ -9,6 +11,9 @@ export const useMethods = () => {
 
   const isPlacePath = useMemo(() => pathname.includes("place"), [pathname]);
   const isDatePath = useMemo(() => pathname.includes("date"), [pathname]);
+
+  const { zipCode, roadAddress, detailAddress } = usePlaceStore();
+  const { dateRange } = useDateStore();
 
   const goBack = () => navigate(-1);
   const pathTitle = (path: string) => {
@@ -28,10 +33,28 @@ export const useMethods = () => {
     return navigate("/matching/methods/place");
   };
 
-  const isCompleteButtonDisabled = useMemo(
+  const isCompleteButtonDisabled = () => {
+    if (isPlacePath) return disabledPlace;
+    if (isDatePath) return disabledDate;
+    return disabledMethods;
+  };
+
+  const disabledMethods = useMemo(
     () => clicked.every((_) => _ === false),
     [clicked]
   );
+
+  const disabledPlace = useMemo(() => {
+    if (zipCode === "" || roadAddress === "" || detailAddress === "") {
+      return true;
+    } else {
+      return false;
+    }
+  }, [detailAddress, roadAddress, zipCode]);
+
+  const disabledDate = useMemo(() => {
+    return dateRange.some((_) => _ === null);
+  }, [dateRange]);
 
   return {
     goBack,
