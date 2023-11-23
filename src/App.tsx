@@ -8,6 +8,7 @@ import Etc from "./components/pages/matching/training/detail/etc/Etc";
 import Methods from "./pages/matching/methods/Methods";
 import Place from "./pages/matching/methods/place/Place";
 import Date from "./pages/matching/methods/date/Date";
+import Trainer from "./pages/matching/trainer/Trainer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="place" element={<Place />} />
           <Route path="date" element={<Date />} />
         </Route>
+        <Route path="trainer" element={<Trainer />} />
       </Route>
     </Routes>
   );
