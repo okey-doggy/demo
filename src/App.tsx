@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/home/Home";
 import Buddy from "./pages/matching/buddy/Buddy";
 import Training from "./pages/matching/training/Training";
 import Detail from "./pages/matching/detail/Detail";
@@ -9,6 +8,8 @@ import Methods from "./pages/matching/methods/Methods";
 import Place from "./pages/matching/methods/place/Place";
 import Date from "./pages/matching/methods/date/Date";
 import Trainer from "./pages/matching/trainer/Trainer";
+import TrainerDetails from "./components/pages/matching/trainer/details/TrainerDetails";
+import Reviews from "./components/pages/matching/trainer/reviews/Reviews";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
           <Route path="date" element={<Date />} />
         </Route>
         <Route path="trainer" element={<Trainer />}>
-          <Route path=":id" element={<TrainerDetail />}>
+          <Route path=":id" element={<TrainerDetails />}>
             <Route path=":review" element={<Reviews />} />
           </Route>
         </Route>
