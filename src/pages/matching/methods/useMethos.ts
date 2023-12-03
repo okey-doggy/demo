@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { methods } from "@/constant/methods";
 import { usePlaceStore } from "@/store/usePlaceStore";
 import { useDateStore } from "@/store/useDateStore";
-import { _DATE_PATH, _PLACE_PATH } from "./constants";
+import { _DATE_PATH, _PLACE_PATH } from "../../../constant/path";
 
 export const useMethods = () => {
   const navigate = useNavigate();

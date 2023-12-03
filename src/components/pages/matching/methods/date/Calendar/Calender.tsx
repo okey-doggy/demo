@@ -1,7 +1,7 @@
 import DatePicker, { registerLocale } from "react-datepicker";
 import ko from "date-fns/locale/ko";
 
-import { useDate } from "../useDate";
+import { useDate } from "../../../../../../pages/matching/methods/date/useDate";
 import "./Calendar.css";
 import styles from "./Calendar.module.scss";
 import { useNavigate } from "react-router-dom";

@@ -25,7 +25,11 @@ function App() {
           <Route path="place" element={<Place />} />
           <Route path="date" element={<Date />} />
         </Route>
-        <Route path="trainer" element={<Trainer />} />
+        <Route path="trainer" element={<Trainer />}>
+          <Route path=":id" element={<TrainerDetail />}>
+            <Route path=":review" element={<Reviews />} />
+          </Route>
+        </Route>
       </Route>
     </Routes>
   );

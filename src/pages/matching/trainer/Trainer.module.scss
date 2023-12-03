@@ -28,6 +28,7 @@
       }
     }
     .section {
+      cursor: pointer;
       margin-top: $m3;
 
       .card {
@@ -35,10 +36,10 @@
         width: 312px;
         padding: var(--0, 0px);
         align-items: flex-start;
-        gap: var(--0, 0px);
+        gap: 0;
 
         border-radius: 8px;
-        border: 1px solid #dadada;
+        border: 1px solid $grey02;
 
         .thumbnail {
           width: 87px;
@@ -47,26 +48,54 @@
           border-radius: 8px 0px 0px 8px;
 
           img {
-            width: 87px;
-            height: 91px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
           }
         }
 
         .trainerInfo {
           display: flex;
+          flex: 1 0 0;
           flex-direction: column;
           padding: var(--xs, 8px) 16px;
+          height: 100%;
+
           box-sizing: border-box;
-          // align-items: center;
-          flex: 1 0 0;
           border-radius: 0px 8px 8px 0px;
-          font-family: Pretendard-Regular;
 
           .name {
             color: #000;
             font-size: 15px;
             font-weight: 600;
+            line-height: normal;
+          }
+
+          .description {
+            color: #737373;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            .content {
+              margin-top: 4px;
+            }
+          }
+
+          .price {
+            margin-top: 9px;
+            color: #737373;
+            font-size: 11px;
+            font-weight: 600;
+            line-height: normal;
+          }
+
+          .reviewCounts {
+            margin-top: 2px;
+            color: #737373;
+            font-size: 11px;
+            font-weight: 400;
             line-height: normal;
           }
         }

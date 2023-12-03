@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 
 export const useTrainer = () => {
   const [trainers, setTrainers] = useState<ITrainer[]>([]);
+  const [selectedId, setSelectedId] = useState<number>();
 
   const getTrainer = useCallback(async () => {
     try {
@@ -33,5 +34,9 @@ export const useTrainer = () => {
     getTrainer();
   }, [getTrainer]);
 
-  return { trainers, getTrainer };
+  const handleSelect = (id: number) => {
+    setSelectedId(id);
+  };
+
+  return { trainers, getTrainer, handleSelect };
 };

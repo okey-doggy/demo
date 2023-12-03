@@ -1,6 +1,6 @@
 import Underline from "@/assets/images/underline.svg";
 import styles from "./Date.module.scss";
-import Calender from "./Calendar/Calender";
+import Calender from "../../../../components/pages/matching/methods/date/Calendar/Calender";
 import { createPortal } from "react-dom";
 import useCalendarModalStore from "@/store/useCalendarModalStore";
 import { useDateStore } from "@/store/useDateStore";

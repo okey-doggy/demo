@@ -6,25 +6,11 @@ import styles from "./Training.module.scss";
 import Header from "@/components/common/header/Header";
 import Indicators from "@/components/common/indicators/Indicators";
 import Education from "@/components/pages/matching/training/Education";
-import { trainings } from "@/constant/training";
+import { useTraining } from "./useTraining";
 
 function Training() {
-  const navigate = useNavigate();
-  const [clicked, setClicked] = useState<[boolean, boolean]>([false, false]);
-  const [selectId, setSelectId] = useState<number | undefined>();
-  const [selectIdx, setSelectIdx] = useState<number | undefined>();
-
-  const handleClick = (id: number, index: number) => {
-    setSelectId(id);
-    setSelectIdx(index);
-    setClicked((prev) => {
-      const newState = [...prev] as [boolean, boolean];
-      newState[index] = !newState[index];
-      const [first, second] = newState;
-      return first === second ? [index === 0, index === 1] : newState;
-    });
-  };
-
+  const { trainings, clicked, selectIdx, handleClick, goBack, goToNext } =
+    useTraining();
   return (
     <Layout>
       <div className={styles.container}>
@@ -54,13 +40,13 @@ function Training() {
           </section>
         </div>
         <div className={styles.buttonWrapper}>
-          <button className={styles.before} onClick={() => navigate(-1)}>
+          <button className={styles.before} onClick={goBack}>
             이전
           </button>
           <button
             className={styles.complete}
             disabled={clicked[selectIdx as number] ? false : true}
-            onClick={() => navigate(`/matching/detail/${selectId}`)}
+            onClick={goToNext}
           >
             선택 완료
           </button>

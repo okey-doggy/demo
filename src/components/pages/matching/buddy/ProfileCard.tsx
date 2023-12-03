@@ -13,7 +13,7 @@ function ProfileCard({ profiles }: IProps) {
   const cardWrapperRef = useRef<HTMLDivElement>(null);
 
   // 마우스 휠 이벤트 핸들러
-  const handleMouseWheel: React.WheelEventHandler<HTMLDivElement> = (e) => {
+  const handleMouseWheel: WheelEventHandler<HTMLDivElement> = (e) => {
     if (cardWrapperRef.current) {
       cardWrapperRef.current.scrollLeft += e.deltaY;
       e.preventDefault();
