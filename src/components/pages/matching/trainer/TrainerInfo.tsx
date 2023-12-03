@@ -1,6 +1,6 @@
 import { ITrainer } from "@/@types/matching/trainer/trainer";
-import styles from "../Trainer.module.scss";
 import { PriceClass } from "@/libs/price";
+import styles from "./TrainerInfo.module.scss";
 
 function TrainerInfo({
   trainer,
